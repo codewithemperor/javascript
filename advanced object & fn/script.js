@@ -61,3 +61,45 @@ var random = function rand() {
 }
 
 random();
+
+// closure
+
+function interviewQ(job) {
+    return function(name) {
+        if (job === "barber") {
+            console.log(name + " How long have you been barbing?");
+        } else if (job === "Briklayer") {
+            console.log(name + " how many cements are to be used to a 3-bedroom flat?");
+        } else {
+            console.log("What do you do " + name + "?");
+        }
+
+    }
+}
+
+interviewQ("Bricklayer")("Adekunle");
+interviewQ("Bricklayer")("Yusuf");
+interviewQ("barber")("Sulaimon");
+
+
+var Question = function(quizQuestion, quizQoption, correctAnswer) {
+    this.quizQuestion = quizQuestion;
+    this.quizQoption = quizQoption;
+    this.correctAnswer = correctAnswer;
+}
+
+var q1 = new Question("Did I know this course?", ["Yes", "No"], "Yes");
+var q2 = new Question("What is My Name?", ["Adebayo", "Adigun", "Yusuf"], "Yusuf");
+var q3 = new Question("How Old I'm I?", ["10", "23", "24", "30"], "23");
+var q4 = new Question("I'm I fasting today?", ["Yes", "No"], "Yes");
+var q5 = new Question("I'm I in love?", ["Yes", "No"], "No");
+
+var qArr = [q1, q2, q3, q4, q5];
+
+
+function randomQuestion(a){
+    console.log(qArr[a].quizQuestion);
+    console.log(qArr[a].quizQoption);
+}
+randQ = Math.floor(Math.random() * qArr.length);
+randomQuestion(randQ);
