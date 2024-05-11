@@ -4,229 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            height: 100vh;
-            font-family: calibri;
-            color: #f6f6f6;
-            font-size: 15px;
-        }
-        .head{
-            background-color: brown;
-            display: flex;
-            width: 100;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 50px;
-        }
-
-        .head .text  {
-            font-size: 20px;
-            font-weight: 400;
-            margin-bottom: 10px;
-        }
-
-        .amount {
-            font-size: 40px;
-            margin-bottom: 10px;
-            font-weight: 300;
-        }
-
-        .inc {
-            display: flex;
-            align-content: center;
-            justify-content: space-between;
-            padding: 10px 30px;
-            padding-right: 40px;
-            width: 300px;
-            position: relative;
-        }
-
-        .inc .desc {
-            color: #000;
-            text-align: left;
-        }
-
-        .percentage {
-            position: absolute;
-            right: 0;
-            margin-right: 7px;
-            font-size: .8rem;
-            background-color: rgb(240, 87, 87);
-            padding: 1px 2px;
-        }
-
-        .sign {
-            margin-right: 5px;
-        }
-
-        .inc.income{
-            background-color: goldenrod;
-            margin-bottom: 10px;
-        }
-
-        .inc.expenses{
-            background-color: crimson;
-        }
-
-        .middle {
-            background-color: #d4d0d0;
-            padding: 20px;
-            text-align: center;
-        }
-
-        input, select{
-            /* font-family: calibri; */
-            padding: 10px 10px;
-            border-radius: 5px/5px;
-            border: 1px solid #b6b4b4;
-            margin-right: 5px;
-        }
-
-        input:focus select:focus     {
-            border: 1px solid #979696;
-            outline: none;
-        }
-
-        .description{
-            width: 300px;
-        }
-
-        .number {
-            width: 100px;
-        }
-
-        .submit {
-            width: 80px;
-        }
-
-        .submit { 
-            background-color: goldenrod;
-            cursor: pointer;
-            transition: all .5s;
-        }
-
-        .submit:hover {
-            background-color: rgb(166, 122, 8);
-        }
-
-        .container {
-            color: #000;
-            background-color: rgba(252, 226, 154, 0.65);
-            padding: 50px;
-        }
-        .body-content {
-            display: flex;
-            justify-content: center;
-            width: 950px;
-            margin: 0 auto;
-        }
-        
-        .budget ul{
-            list-style: none;
-        }
-
-        .budget.income {
-            width: 50%;
-            margin-right: 10px;
-            color: goldenrod;
-        }
-
-        .budget.expenses {
-            width: 50%;
-            margin-left: 10px;
-            color: crimson;
-        }
-
-        .budget-list .description {
-            color: #000;
-        }
-
-        .expenses-heading, .income-heading {
-            margin-bottom: 12px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            text-transform: uppercase;
-
-        }
-
-        .budget-list {
-            padding: 10px 15px;
-            background-color: #f6f6f6;
-            display: flex;
-            justify-content: space-between;
-            border-top: 1px solid #dfdede;
-            border-bottom: 1px solid #c7c6c6;            
-        }
-
-        .budget-list:nth-child(even) {
-            background-color: #ebf4c7;
-            border: none;
-        }
-
-        .s2 { 
-            display: flex;
-        }
-
-        .expenses-percentage {
-            margin-left: 15px;
-            font-size: .7rem;
-            background-color: crimson;
-            padding: 1px 2px;
-            color: #fff;
-        }
-
-        .clr {
-            margin-left: 15px;
-            font-size: .7rem;
-            border-radius: 50px;
-            border: 1px solid crimson;
-            padding: 1px 5px;
-            cursor: pointer;
-            color: crimson;
-            display: none;
-        }
-
-        .budget-list:hover .clr {
-            display: block;            
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="head">
-        <p class="text">Available budget in 2016:</p>
-        <p class="amount">+ 1,400.00</p>
+        <p class="budget__title">Available budget in 2016:</p>
+        <p class="budget__value">+ 1,400.00</p>
 
-        <div class="inc income">
-            <p class="desc">INCOME</p>
-            <p><span class="sign">+</span>42,000</p>
-            
+        <div class="budget income">
+            <p class="budget-heading-text">INCOME</p>
+            <p class="budget-income-value">+ 42,000</p>
+            <!-- <p class="budget-percentage">&nbsp;</p> -->
         </div>
 
-        <div class="inc expenses">
-            <p class="desc">EXPENSES</p>
-            <p><span class="sign">-</span>4,000</p>
-            <p class="percentage">10%</p>
+        <div class="budget expenses">
+            <p class="budget-heading-text">EXPENSES</p>
+            <p class="budget-income-value">- 30,000</p>
+            <p class="budget-percentage">10%</p>
         </div>
     </div>
 
     <div class="middle">
-        <form action="">
-            <select name="" id="">
+        
+            <select class="add_type">
                 <option value="+">+</option>
                 <option value="-">-</option>
             </select>
-            <input type="text" name="" placeholder="Add description" class="description">
-            <input type="number" name="" placeholder="value" class="number">
-            <input type="submit" value="Add" name="" class="submit">
-        </form>
+            <input type="text" name="" placeholder="Add description" class="add_description" name="add_description">
+            <input type="number" name="" placeholder="value" class="add_value" name="add_value">
+            <button class="add_button" name="add_button">Add</button>
+        
     </div>
 
     <div class="container">
@@ -294,6 +102,6 @@
         </div>
     </div>
     
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

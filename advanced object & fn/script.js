@@ -140,34 +140,50 @@
 // Divide the sum by the total number of elements in the array to find the average.
 // Return the calculated average.
 
-function calculateAverage(array) {
-    var result = 0;
+// function calculateAverage(array) {
+//     var result = 0;
 
-    for (var i = 0; i < array.length; i++) {
-        result += array[i];
-     }
+//     for (var i = 0; i < array.length; i++) {
+//         result += array[i];
+//      }
     
-     var length = array.length;
-    //  console.log(length);
-     var answer = result / length
-     console.log(answer);
+//      var length = array.length;
+//     //  console.log(length);
+//      var answer = result / length
+//      console.log(answer);
      
-    }
+//     }
     
-calculateAverage([10, 20, 30, 40, 50]);
-calculateAverage([-5, 0, 5]);
-calculateAverage([2, 4, 6, 8, 10]);
+// calculateAverage([10, 20, 30, 40, 50]);
+// calculateAverage([-5, 0, 5]);
+// calculateAverage([2, 4, 6, 8, 10]);
 
-// function CountVowels
+// // function CountVowels
 
-function countVowels(strings) {
-    var count = 0;
-    for (var i = 0; i < strings.length; i++) {
-        if (strings[i] === "a" || strings[i] === "e" || strings[i] === "i" || strings[i] === "o" || strings[i] === "u") {
-            count++;
-        }
-    }
-    return count;
-}
+// function countVowels(strings) {
+//     var count = 0;
+//     for (var i = 0; i < strings.length; i++) {
+//         if (strings[i] === "a" || strings[i] === "e" || strings[i] === "i" || strings[i] === "o" || strings[i] === "u") {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
 
-console.log(countVowels("hello"));
+// console.log(countVowels("hello"));
+
+// PROMISE
+const getIds = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve([453, 483, 292, 492]);
+    }, 1500);
+});
+
+getIds
+.then((id) => {
+    console.log(id);
+})
+.catch(error => {
+    console.log("error");
+})
+;
