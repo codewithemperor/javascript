@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Create Account</h2>
+
+        <form action="../index.html" method="post" class="registration">
+            
+            <div class="field matricField">
+                <div class="input-field">
+                    <input type="number" name="matric" placeholder="Enter your Matric Number">
+                </div>
+                <span class="error matric">
+                    <p class="error-message">Check the number</p>
+                </span>
+            </div>    
+
+            <div class="field passwordField">
+                <div class="input-field">
+                    <input type="password" name="password" placeholder="Enter your Password">
+                </div>
+                <span class="error">
+                    <p class="error-message">Password must contain an Uppercase, lowercase and number and must be between 6 and 10 character</p>
+                </span>
+            </div>
+
+            <div class="field cPasswordField">
+                <div class="input-field">
+                    <input type="password" name="cpassword" placeholder="Confirm your Password">
+                </div>
+                <span class="error">
+                    <p class="error-message">Password does not Match</p>
+                </span>
+            </div>
+
+            
+                <div class="input-field button">
+                    <input type="submit" name="submit" value="Register Now" class="btn">
+                </div>
+                
+     
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
